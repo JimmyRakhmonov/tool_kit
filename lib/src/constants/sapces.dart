@@ -1,0 +1,32 @@
+import 'package:flutter/material.dart';
+
+const verticalSpace2 = SizedBox(height: 2);
+const verticalSpace4 = SizedBox(height: 4);
+const verticalSpace5 = SizedBox(height: 5);
+const verticalSpace6 = SizedBox(height: 6);
+const verticalSpace8 = SizedBox(height: 8);
+const verticalSpace10 = SizedBox(height: 10);
+const verticalSpace12 = SizedBox(height: 12);
+const verticalSpace14 = SizedBox(height: 14);
+const verticalSpace16 = SizedBox(height: 16);
+const verticalSpace18 = SizedBox(height: 18);
+const verticalSpace20 = SizedBox(height: 20);
+const verticalSpace22 = SizedBox(height: 22);
+const verticalSpace24 = SizedBox(height: 24);
+const verticalSpace28 = SizedBox(height: 28);
+const verticalSpace32 = SizedBox(height: 32);
+const verticalSpace35 = SizedBox(height: 35);
+const verticalSpace40 = SizedBox(height: 40);
+
+const horizontalSpace2 = SizedBox(width: 2);
+const horizontalSpace4 = SizedBox(width: 4);
+const horizontalSpace6 = SizedBox(width: 6);
+const horizontalSpace8 = SizedBox(width: 8);
+const horizontalSpace10 = SizedBox(width: 10);
+const horizontalSpace12 = SizedBox(width: 12);
+const horizontalSpace14 = SizedBox(width: 14);
+const horizontalSpace16 = SizedBox(width: 16);
+const horizontalSpace18 = SizedBox(width: 18);
+const horizontalSpace20 = SizedBox(width: 20);
+const horizontalSpace22 = SizedBox(width: 22);
+const horizontalSpace24 = SizedBox(width: 24);
