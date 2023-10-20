@@ -8,6 +8,7 @@ class AppTextField extends StatelessWidget {
   final VoidCallback? onFieldTap;
   final TextEditingController? fieldController;
   final double? height;
+  final double? width;
   final EdgeInsets? prefixPadding;
   final Widget? suffix;
   final TextInputType? textInputType;
@@ -28,6 +29,7 @@ class AppTextField extends StatelessWidget {
   final void Function(String)? onFieldSubmitted;
   final EdgeInsets? contentPadding;
   final TextStyle? hintStyle;
+  final String? hint;
 
   const AppTextField(
       {Key? key,
@@ -55,7 +57,9 @@ class AppTextField extends StatelessWidget {
       this.inputAction,
       this.onFieldSubmitted,
       this.contentPadding,
-      this.hintStyle})
+      this.hintStyle,
+      this.hint,
+      this.width})
       : super(key: key);
 
   @override
@@ -63,6 +67,7 @@ class AppTextField extends StatelessWidget {
     final Color bgColor = fillColor != null ? fillColor! : context.background;
     return SizedBox(
       height: height,
+      width: width,
       child: TextFormField(
         textAlignVertical: TextAlignVertical.center,
         readOnly: readOnly,
@@ -84,7 +89,7 @@ class AppTextField extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: contentPadding ??
               const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          counterText: "",
+          counterText: '',
           prefixIcon: prefix != null
               ? Padding(
                   padding: prefixPadding ?? const EdgeInsets.all(16.0),
@@ -94,17 +99,31 @@ class AppTextField extends StatelessWidget {
           isDense: true,
           prefixIconConstraints:
               const BoxConstraints(minWidth: 0, minHeight: 0),
-          border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(radius),
-              borderSide: BorderSide.none),
           filled: true,
-          hintText: '$label ${isRequired ? '*' : ''}',
+          hintText: hint,
+          labelText: '$label ${isRequired ? '*' : ''}',
           hintStyle: hintStyle,
           alignLabelWithHint: alignLabelWithHint,
           fillColor: bgColor,
           floatingLabelAlignment: FloatingLabelAlignment.start,
           floatingLabelStyle:
               context.labelLarge!.copyWith(color: context.primary),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Theme.of(context).primaryColor),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: context.theme.colorScheme.outline),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Theme.of(context).colorScheme.error),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Theme.of(context).colorScheme.error),
+            borderRadius: BorderRadius.circular(10.0),
+          ),
         ),
       ),
     );

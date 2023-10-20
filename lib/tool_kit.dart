@@ -1,6 +1,5 @@
 library tool_kit;
 
-/// A Calculator.
 export 'package:tool_kit/src/constants/durations.dart';
 export 'package:tool_kit/src/constants/sapces.dart';
 export 'package:tool_kit/src/extensions/align.dart';

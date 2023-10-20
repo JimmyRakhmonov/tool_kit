@@ -41,7 +41,7 @@ class AppButton extends StatefulWidget {
   final double? height;
   final double? width;
   final BoxShape? shape;
-  final String text;
+  final dynamic text;
   final TextStyle textStyle;
   final String? image;
   final void Function()? onPressed;
@@ -138,9 +138,11 @@ class _AppButtonState extends State<AppButton> with TickerProviderStateMixin {
                   ],
                   widget.isLoading
                       ? CupertinoActivityIndicator(color: widget.loadingColor)
-                      : Text(widget.text,
-                          style: widget.textStyle
-                              .copyWith(color: widget.textColor)),
+                      : widget.text is Widget
+                          ? widget.text
+                          : Text(widget.text,
+                              style: widget.textStyle
+                                  .copyWith(color: widget.textColor)),
                 ],
               )),
         ),
