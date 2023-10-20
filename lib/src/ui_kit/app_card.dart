@@ -22,7 +22,8 @@ class AppCard extends StatelessWidget {
       this.label,
       this.labelStyle,
       this.subTitle,
-      this.dividerColor});
+      this.dividerColor,
+      this.showDivider = false});
 
   final double? height, width, borderWidth;
   final EdgeInsets? padding, margin;
@@ -37,6 +38,7 @@ class AppCard extends StatelessWidget {
   final TextStyle? labelStyle;
   final Widget? subTitle;
   final Color? dividerColor;
+  final bool showDivider;
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +68,7 @@ class AppCard extends StatelessWidget {
                 boxShadow: [
                   if (showShadow)
                     BoxShadow(
-                      color: context.bodyLarge!
-                          .color!
-                          .withOpacity(.04),
+                      color: context.bodyLarge!.color!.withOpacity(.04),
                       blurRadius: 26,
                       offset: const Offset(0, 0),
                     )
@@ -84,7 +84,7 @@ class AppCard extends StatelessWidget {
                       return Column(
                         children: [
                           items![index],
-                          if (index != items!.length - 1)
+                          if (index != items!.length - 1 && showDivider)
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 15),
