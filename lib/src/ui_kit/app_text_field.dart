@@ -30,6 +30,9 @@ class AppTextField extends StatelessWidget {
   final EdgeInsets? contentPadding;
   final TextStyle? hintStyle;
   final String? hint;
+  final bool obscureText;
+  final TextStyle? style;
+  final TextStyle? labelStyle;
 
   const AppTextField(
       {Key? key,
@@ -59,7 +62,10 @@ class AppTextField extends StatelessWidget {
       this.contentPadding,
       this.hintStyle,
       this.hint,
-      this.width})
+      this.width,
+      this.obscureText = false,
+      this.style,
+      this.labelStyle})
       : super(key: key);
 
   @override
@@ -72,7 +78,7 @@ class AppTextField extends StatelessWidget {
         textAlignVertical: TextAlignVertical.center,
         readOnly: readOnly,
         validator: validator,
-        style: context.bodyLarge!.copyWith(fontSize: 16),
+        style: style ?? context.bodyLarge!.copyWith(fontSize: 16),
         onTap: onFieldTap,
         maxLength: maxLength,
         focusNode: focusNode,
@@ -86,7 +92,9 @@ class AppTextField extends StatelessWidget {
         textCapitalization: textCapitalization,
         cursorColor: Theme.of(context).primaryColor,
         maxLines: maxLines,
+        obscureText: obscureText,
         decoration: InputDecoration(
+          labelStyle: labelStyle,
           contentPadding: contentPadding ??
               const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           counterText: '',
