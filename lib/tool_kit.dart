@@ -29,3 +29,4 @@ export 'package:tool_kit/src/ui_kit/app_icon.dart';
 export 'package:tool_kit/src/ui_kit/app_text_field.dart';
 export 'package:tool_kit/src/ui_kit/keyboard_escape.dart';
 export 'package:tool_kit/src/ui_kit/simple_shadow.dart';
+export 'package:tool_kit/src/ui_kit/app_dropdown.dart';
