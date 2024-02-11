@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tool_kit/src/constants/durations.dart';
 import 'package:tool_kit/src/constants/sapces.dart';
 import 'package:tool_kit/src/extensions/context.dart';
 
@@ -52,8 +51,7 @@ class AppCard extends StatelessWidget {
             Text(label!, style: labelStyle),
             verticalSpace8
           ],
-          AnimatedContainer(
-            duration: duration300,
+          Container(
             margin: margin,
             padding: padding,
             height: height,
